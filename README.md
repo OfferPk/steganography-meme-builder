@@ -1,61 +1,37 @@
-# steganography-meme-builder
-This tool hides secret messages in images using steganography. The message is embedded in the least significant bits of the image pixels, making it virtually undetectable to the naked eye.
-To hide a message: Upload an image, enter your text, and click "Hide Text"
-To extract a message: Upload an image with hidden text and click "Extract Text"
-Higher bit modes allow more text but may slightly alter the image
-For best results, use PNG images (JPEG compression may corrupt hidden data)
-Steganography Meme Builder © 2025 | All images are processed locally in your browser
-Key Improvements:
-Modern UI/UX:
+# Steganography Meme Builder
 
-Clean, responsive design with card-based layout
+Browser-based tool that hides and extracts secret text in images using **LSB steganography**. All processing happens locally in your browser — images are not uploaded to a server.
 
-Drag and drop file upload
+## Quick start
 
-Progress indicators for operations
+1. Open [`index.html`](index.html) in a modern browser (or serve the folder with any static file server).
+2. Upload an image (**PNG recommended**; JPEG compression can corrupt hidden data).
+3. Enter a message and click **Hide Text**, or upload a stego image and click **Extract Text**.
 
-Better status messaging
+No build step or package manager required.
 
-Enhanced Functionality:
+## Features
 
-Configurable LSB depth (1, 2, or 4 bits)
+- LSB depth: 1, 2, or 4 bits
+- Color channel selection (all RGB, or R / G / B only)
+- Optional basic XOR encryption
+- Capacity hint based on image size and settings
+- Drag-and-drop upload, progress feedback, reset
+- Responsive card-based UI
 
-Channel selection (RGB, Red, Green, or Blue)
+## Layout
 
-Basic encryption options (XOR)
+```
+.
+├── README.md
+├── .gitignore
+└── index.html    # single-page app (HTML/CSS/JS)
+```
 
-Capacity calculator based on image size and settings
+## Notes
 
-Performance Improvements:
+- Prefer PNG for round-trip hide/extract reliability.
+- Higher LSB modes increase capacity but can slightly change the visible image.
+- Use responsibly; this is for education and personal experimentation.
 
-Image resizing for large files
-
-Progress reporting during operations
-
-Better memory management
-
-Error Handling:
-
-Comprehensive error messages
-
-Input validation
-
-Try-catch blocks for operations
-
-Additional Features:
-
-Reset functionality
-
-Help section explaining how it works
-
-File name display
-
-Visual feedback during operations
-
-Accessibility:
-
-Better contrast
-
-Clear labels
-
-Responsive design for mobile devices
+© 2025 Steganography Meme Builder — local browser processing only.
